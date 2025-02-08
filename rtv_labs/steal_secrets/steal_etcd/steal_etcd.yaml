@@ -1,0 +1,93 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: user-secrets-1
+type: Opaque
+stringData:
+  username: testuser1
+  password: StrongPasswOrd123!
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-key-secret-1
+type: Opaque
+stringData:
+  api_key: a1b2c3d4-e5f6-7890-1234-567890abcdef
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: user-secrets-2
+type: Opaque
+stringData:
+  username: anotheruser
+  password:  P@$$wOrd_Complex!
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-key-secret-2
+type: Opaque
+stringData:
+  api_key:  fedcba98-7654-3210-0fed-cba987654321
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: user-secrets-3
+type: Opaque
+stringData:
+  username:  yet_another_user
+  password: S3cure_P@$$wOrd
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-key-secret-3
+type: Opaque
+stringData:
+  api_key:  98765432-10fe-dcba-9876-543210fedcba
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: user-secrets-4
+type: Opaque
+stringData:
+  username:  user4_name
+  password:  C0mpl3x_P@$$
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-key-secret-4
+type: Opaque
+stringData:
+  api_key:  1a2b3c4d-5e6f-7089-0123-456789abcdef0
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: user-secrets-5
+type: Opaque
+stringData:
+  username:  last_user
+  password:  V3ryStr0ngP@$$wOrd
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-key-secret-5
+type: Opaque
+stringData:
+  api_key:  0fedcba9-8765-4321-10fe-dcba9876543210

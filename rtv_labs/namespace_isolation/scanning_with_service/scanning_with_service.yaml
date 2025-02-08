@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eng1
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eng2
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-eng1
+  namespace: eng1
+  labels:
+    app: nginx-eng1
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+  nodeSelector:
+    kubernetes.io/hostname: minikube-m02 # Target node for eng1 pod
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-eng2
+  namespace: eng2
+  labels:
+    app: nginx-eng2
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+  nodeSelector:
+    kubernetes.io/hostname: minikube-m03 # Target node for eng2 pod
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-eng1-service
+  namespace: eng1
+spec:
+  selector:
+    app: nginx-eng1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-eng2-service
+  namespace: eng2
+spec:
+  selector:
+    app: nginx-eng2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
