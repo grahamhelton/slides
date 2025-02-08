@@ -2,6 +2,8 @@
 
 The only pre-reqs for these labs are to have access to a Kubernetes environment. Minikube will be just fine.
 
+Install minikube here: https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
+
 Once minikube is installed, and running, navigate to each folder and run the `lab.sh` script.
 
 ```bash
